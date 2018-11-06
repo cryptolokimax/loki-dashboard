@@ -8,7 +8,7 @@ var app = express();
 
 app.use(hostValidation({ hosts: ['127.0.0.1:'+port,
                                  'localhost:'+port,
-                                 'lokidashboard', 
+                                 'lokidashboard.tk'+port,
                                  /.*\.lokidashboard\.tk$/] }));
  
 app.use('/config', proxy({target: 'http://localhost:5000', changeOrigin: true}));
