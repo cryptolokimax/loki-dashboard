@@ -1,0 +1,5 @@
+{
+    "redirects": [
+      { "source": "/config", "destination": "http://localhost:5000/config" }
+    ]
+}

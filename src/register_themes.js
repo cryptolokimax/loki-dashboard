@@ -16,4 +16,4 @@ ThemeManager.add(snowTheme)
 ThemeManager.add(solarizedDarkTheme)
 ThemeManager.add(wineTheme)
 
-ThemeManager.defaultTheme = solarizedDarkTheme.name
+// ThemeManager.defaultTheme = solarizedDarkTheme.name

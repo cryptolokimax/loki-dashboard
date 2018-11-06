@@ -1,109 +1,67 @@
-#
-# mozaik generic demo dashboard
-#
-# It's not required, but you should add this env var,
-# without it, you'll probably reach the API rate limit.
-#
-# GITHUB_API_TOKEN=xxxxx
-#
 port: 5000
 
-# define duraton between each dashboard rotation (ms)
+# define duration between each dashboard rotation (ms)
 rotationDuration: 10000
 # define the interval used by Mozaïk Bus to call registered APIs
 apisPollInterval: 100000
 
 dashboards:
-- columns: 4
+- columns: 3
   rows:    3
-  title:   Mozaïk demo dashboard
+  title:   LOKI dashboard
   widgets:
-  -
-    extension:    github
-    widget:       UserBadge
-    user:         plouc
-    columns:      1
-    rows:         1
-    x:            0
-    y:            0
-  -
-    extension:    github
-    widget:       OrgBadge
-    organization: ekino
-    columns:      1
-    rows:         1
-    x:            1
-    y:            0
-  -
-    extension:    github
-    widget:       RepoContributorsStats
-    repository:   plouc/mozaik
-    columns:      1
-    rows:         1
-    x:            2
-    y:            0
-  -
-    extension:    github
-    widget:       RepoBadge
-    repository:   plouc/mozaik
-    columns:      1
-    rows:         1
-    x:            3
-    y:            0
-  -
-    extension:    mozaik
-    widget:       Inspector
-    columns:      1
-    rows:         1
-    x:            0
-    y:            1
-  -
-    extension:    github
-    widget:       Status
-    columns:      1
-    rows:         1
-    x:            1
-    y:            1
-  -
-    extension:    github
-    widget:       Branches
-    repository:   plouc/mozaik
-    columns:      1
-    rows:         1
-    x:            2
-    y:            1
-  -
-    extension:    github
-    widget:       PullRequests
-    repository:   plouc/mozaik
-    columns:      1
-    rows:         1
-    x:            3
-    y:            1
-  -
-    extension:    travis
-    widget:       Repository
-    owner:        plouc
-    repository:   mozaik
-    columns:      1
-    rows:         1
-    x:            0
-    y:            2
-  -
-    extension:   travis
-    widget:      BuildHistogram
-    owner:       plouc
-    repository:  mozaik
-    columns:     2
-    rows:        1
-    x:           1
-    y:           2
-  -
-    extension:   travis
-    widget:      BuildHistory
-    owner:       plouc
-    repository:  mozaik
-    columns:     1
-    rows:        1
-    x:           3
-    y:           2
+    -
+      extension:      loki
+      widget:         CustomJson
+      url:            https://api.coinmarketcap.com/v2/ticker/2748/?convert=BTC
+      title:          Current Price
+      template:       "<div class='json-w-wrapper'>
+                        <div class='json-w-center'>
+                          <div class='json-w-big-text'>$<%= _.round(data.quotes.USD.price, 3) %></div>
+                          <div class='json-w-right-text' style='color: <%= data.quotes.USD.percent_change_1h < 0 ? 'red' : 'green' %>'>
+                            <%= _.round(data.quotes.USD.percent_change_1h, 2) %>%&nbsp;<%= data.quotes.USD.percent_change_1h < 0 ? '↓' : '↑' %>
+                          </div>
+                        </div>
+                        <div class='json-w-bottom-text'><%= _.round(data.quotes.BTC.price * 100000000, 2) %> Satoshi</div>
+                      </div>"
+      columns:        1
+      rows:           1
+      x:              0
+      y:              0
+    -
+      extension:      loki
+      widget:         CustomJson
+      url:            http://88.208.54.18:9000/loki-sn-calc
+      title:          Service node count 
+      template:       "<div class='json-w-wrapper'>
+                        <div class='json-w-center'>
+                          <div class='json-w-big-text'><%= numOfSNs %></div>
+                        </div>
+                      </div>"
+      columns:        1
+      rows:           1
+      x:              1
+      y:              0
+    -
+      extension:      loki
+      widget:         CustomJson
+      url:            http://88.208.54.18:9000/loki-sn-calc
+      title:          SN Locked,% of circ supply
+      template:       "<div class='json-w-wrapper'>
+                        <div class='json-w-center'>
+                          <div class='json-w-big-text'><%= _.round(contributedToCircSupplyPercent, 2) %>%</div>
+                        </div>
+                      </div>"
+      columns:        1
+      rows:           1
+      x:              2
+      y:              0
+    -
+      extension:      loki
+      widget:         StakingGraph
+      url:            http://88.208.54.18:9000/loki-sn-calc
+      title:          Current Staking amount required
+      columns:        2
+      rows:           2
+      x:              0
+      y:              1
