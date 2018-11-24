@@ -8,8 +8,8 @@ var app = express();
 
 app.use(hostValidation({ hosts: ['127.0.0.1:'+port,
                                  'localhost:'+port,
-                                 'lokidashboard.tk:'+port,
-                                 /.*\.lokidashboard\.tk$/] }));
+                                 'lokidashboard.com:'+port,
+                                 /.*\.lokidashboard\.com$/] }));
  
 app.use('/config', proxy({target: 'http://localhost:5000', changeOrigin: true}));
 const wsProxy = proxy('/socket.io', {target:'ws://localhost:5000', changeOrigin: true, ws:true});
