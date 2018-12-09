@@ -3,7 +3,7 @@ port: 5000
 # define duration between each dashboard rotation (s)
 rotationDuration: 25
 # define the interval used by Mozaïk Bus to call registered APIs
-apisPollInterval: 100000
+apisPollInterval: 70000
 
 dashboards:
 - columns: 5
@@ -62,7 +62,7 @@ dashboards:
       widget:         MedianBlockSizeGraph
       url:            http://88.208.54.18:9000/loki-stats
       title:          Median block size
-      columns:        2
+      columns:        4
       rows:           2
       x:              1
       y:              0
@@ -71,42 +71,50 @@ dashboards:
       widget:         BlockchainSizeGraph
       url:            http://88.208.54.18:9000/loki-stats
       title:          Blockchain size
-      columns:        2
-      rows:           2
-      x:              3
-      y:              0
-    -
-      extension:      loki
-      widget:         HashrateGraph
-      url:            http://88.208.54.18:9000/loki-stats
-      title:          Network hashrate
-      columns:        2
+      columns:        4
       rows:           2
       x:              1
       y:              2
+- columns: 2
+  rows:    2
+  title:   LOKI Hashrate & Block Time
+  widgets:
+    -
+      extension:      loki
+      widget:         HashrateGraph24
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Network hashrate (24h)
+      columns:        1
+      rows:           1
+      x:              0
+      y:              0
     -
       extension:      loki
       widget:         BlockTimeHistogram
       url:            http://88.208.54.18:9000/loki-stats
       title:          Blocktime freq. distribution
+      columns:        1
+      rows:           1
+      x:              1
+      y:              0
+    -
+      extension:      loki
+      widget:         HashrateGraph
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Network hashrate (lifetime)
       columns:        2
-      rows:           2
-      x:              3
-      y:              2
+      rows:           1
+      x:              0
+      y:              1
 - columns: 2
-  rows:    3
-  title:   LOKI dashboard
+  rows:    2
+  title:   LOKI Service Nodes
   widgets:
     -
       extension:      loki
-      widget:         CustomJson
-      url:            http://88.208.54.18:9000/loki-sn-calc
+      widget:         NumOfSnGraph
+      url:            http://88.208.54.18:9000/loki-stats
       title:          Service node count 
-      template:       "<div class='json-w-wrapper'>
-                        <div class='json-w-center'>
-                          <div class='json-w-big-text'><%= numOfSNs %></div>
-                        </div>
-                      </div>"
       columns:        1
       rows:           1
       x:              0
@@ -131,6 +139,6 @@ dashboards:
       url:            http://88.208.54.18:9000/loki-sn-calc
       title:          Current Staking amount required
       columns:        2
-      rows:           2
+      rows:           1
       x:              0
       y:              1

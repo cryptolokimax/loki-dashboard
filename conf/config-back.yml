@@ -1,12 +1,99 @@
 port: 5000
 
-# define duration between each dashboard rotation (ms)
-rotationDuration: 10000
+# define duration between each dashboard rotation (s)
+rotationDuration: 25
 # define the interval used by Mozaïk Bus to call registered APIs
 apisPollInterval: 100000
 
 dashboards:
-- columns: 3
+- columns: 5
+  rows:    4
+  title:   LOKI dashboard
+  widgets:
+    -
+      extension:      loki
+      widget:         CustomJson
+      url:            https://api.coinmarketcap.com/v2/ticker/2748/?convert=BTC
+      title:          Current Price
+      template:       "<div class='json-w-wrapper'>
+                        <div class='json-w-center'>
+                          <div class='json-w-big-text'>$<%= _.round(data.quotes.USD.price, 3) %></div>
+                          <div class='json-w-right-text' style='color: <%= data.quotes.USD.percent_change_1h < 0 ? 'red' : 'green' %>'>
+                            <%= _.round(data.quotes.USD.percent_change_1h, 2) %>%&nbsp;<%= data.quotes.USD.percent_change_1h < 0 ? '↓' : '↑' %>
+                          </div>
+                        </div>
+                        <div class='json-w-bottom-text'><%= _.round(data.quotes.BTC.price * 100000000, 2) %> Satoshi</div>
+                      </div>"
+      columns:        1
+      rows:           2
+      x:              0
+      y:              0
+    -
+      extension:      loki
+      widget:         CustomJson
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Current Mempool size
+      template:       "<div class='json-w-wrapper'>
+                        <div class='json-w-center'>
+                          <div class='json-w-big-text'><%= currentMempoolSize %></div>
+                        </div>
+                        <div class='json-w-bottom-text'>24 hrs average: <%= _.round(averageMempoolSize, 2) %></div>
+                      </div>"
+      columns:        1
+      rows:           1
+      x:              0
+      y:              2
+    -
+      extension:      loki
+      widget:         CustomJson
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Average tx in block, 30 days
+      template:       "<div class='json-w-wrapper'>
+                        <div class='json-w-center'>
+                          <div class='json-w-big-text'><%= _.round(averageTransactionsInBlock, 2) %></div>
+                        </div>
+                      </div>"
+      columns:        1
+      rows:           1
+      x:              0
+      y:              3
+    -
+      extension:      loki
+      widget:         MedianBlockSizeGraph
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Median block size
+      columns:        2
+      rows:           2
+      x:              1
+      y:              0
+    -
+      extension:      loki
+      widget:         BlockchainSizeGraph
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Blockchain size
+      columns:        2
+      rows:           2
+      x:              3
+      y:              0
+    -
+      extension:      loki
+      widget:         HashrateGraph
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Network hashrate
+      columns:        2
+      rows:           2
+      x:              1
+      y:              2
+    -
+      extension:      loki
+      widget:         BlockTimeHistogram
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Blocktime freq. distribution
+      columns:        2
+      rows:           2
+      x:              3
+      y:              2
+- columns: 2
   rows:    3
   title:   LOKI dashboard
   widgets:
@@ -22,7 +109,7 @@ dashboards:
                       </div>"
       columns:        1
       rows:           1
-      x:              1
+      x:              0
       y:              0
     -
       extension:      loki
@@ -36,7 +123,7 @@ dashboards:
                       </div>"
       columns:        1
       rows:           1
-      x:              2
+      x:              1
       y:              0
     -
       extension:      loki
