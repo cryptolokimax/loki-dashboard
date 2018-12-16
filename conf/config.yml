@@ -102,9 +102,18 @@ dashboards:
       widget:         HashrateGraph
       url:            http://88.208.54.18:9000/loki-stats
       title:          Network hashrate (lifetime)
-      columns:        2
+      columns:        1
       rows:           1
       x:              0
+      y:              1
+    -
+      extension:      loki
+      widget:         MinorMajorVersionsGraph
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Minor & Major versions (mean)
+      columns:        1
+      rows:           1
+      x:              1
       y:              1
 - columns: 2
   rows:    2
