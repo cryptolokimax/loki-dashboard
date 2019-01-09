@@ -71,9 +71,18 @@ dashboards:
       widget:         BlockchainSizeGraph
       url:            http://88.208.54.18:9000/loki-stats
       title:          Blockchain size
-      columns:        4
+      columns:        2
       rows:           2
       x:              1
+      y:              2
+    -
+      extension:      loki
+      widget:         AlternateChainCountGraph
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Alternate Chain Count
+      columns:        2
+      rows:           2
+      x:              3
       y:              2
 - columns: 2
   rows:    2
