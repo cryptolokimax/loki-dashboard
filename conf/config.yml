@@ -160,16 +160,25 @@ dashboards:
       rows:           1
       x:              0
       y:              1
-- columns: 1
+- columns: 10
   rows:    1
-  title:   Map
+  title:   Nodes Distribution
   widgets:
+    -
+      extension:      loki
+      widget:         NodesDistributionCountries
+      url:            http://88.208.54.18:9000/loki-node-distribution
+      title:          Countries
+      columns:        3
+      rows:           1
+      x:              0
+      y:              0
     -
       extension:      loki
       widget:         NodesDistribution
       url:            http://88.208.54.18:9000/loki-node-distribution
-      title:          Nodes Distribution
-      columns:        1
+      title:          Map
+      columns:        7
       rows:           1
-      x:              0
+      x:              3
       y:              0
