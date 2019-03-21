@@ -119,7 +119,7 @@ dashboards:
       extension:      loki
       widget:         MinorMajorVersionsGraph
       url:            http://88.208.54.18:9000/loki-stats
-      title:          Minor & Major versions (mean)
+      title:          Minor & Major versions (24h)
       columns:        1
       rows:           1
       x:              1

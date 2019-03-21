@@ -1,11 +1,15 @@
-# Mozaïk demo dashboards
-
-[![Travis CI][travis-image]][travis-url]
-
-This repository shows how to use Mozaïk with npm extensions.
+# Mozaïk for LOKIE dashboards
 
 ## Usage
 
+Run 
+
+``` sh
+node server.js
+```
+to start server
+
+------------------------
 ### Clone the repo
 
 ``` sh
