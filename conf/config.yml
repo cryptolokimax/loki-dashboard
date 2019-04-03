@@ -62,9 +62,18 @@ dashboards:
       widget:         MedianBlockSizeGraph
       url:            http://88.208.54.18:9000/loki-stats
       title:          Median block size
-      columns:        4
+      columns:        2
       rows:           2
       x:              1
+      y:              0
+    -
+      extension:      loki
+      widget:         AlternateChainCountGraph
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          Alternate Chain Count
+      columns:        2
+      rows:           2
+      x:              3
       y:              0
     -
       extension:      loki
@@ -77,9 +86,9 @@ dashboards:
       y:              2
     -
       extension:      loki
-      widget:         AlternateChainCountGraph
+      widget:         MinorMajorVersionsGraph
       url:            http://88.208.54.18:9000/loki-stats
-      title:          Alternate Chain Count
+      title:          Minor & Major versions (24h)
       columns:        2
       rows:           2
       x:              3
@@ -99,9 +108,9 @@ dashboards:
       y:              0
     -
       extension:      loki
-      widget:         BlockTimeHistogram
+      widget:         MiningPools
       url:            http://88.208.54.18:9000/loki-stats
-      title:          Blocktime freq. distribution
+      title:          Mining Pools (14d)
       columns:        1
       rows:           1
       x:              1
@@ -117,9 +126,9 @@ dashboards:
       y:              1
     -
       extension:      loki
-      widget:         MinorMajorVersionsGraph
+      widget:         BlockTimeHistogram
       url:            http://88.208.54.18:9000/loki-stats
-      title:          Minor & Major versions (24h)
+      title:          Blocktime freq. distribution
       columns:        1
       rows:           1
       x:              1
