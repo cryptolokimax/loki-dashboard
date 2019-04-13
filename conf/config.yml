@@ -133,7 +133,7 @@ dashboards:
       rows:           1
       x:              1
       y:              1
-- columns: 2
+- columns: 6
   rows:    2
   title:   LOKI Service Nodes
   widgets:
@@ -142,9 +142,18 @@ dashboards:
       widget:         NumOfSnGraph
       url:            http://88.208.54.18:9000/loki-stats
       title:          Service node count 
-      columns:        1
+      columns:        3
       rows:           1
       x:              0
+      y:              0
+    -
+      extension:      loki
+      widget:         SnVersionGraph
+      url:            http://88.208.54.18:9000/loki-sn-calc
+      title:          SN versions 
+      columns:        3
+      rows:           1
+      x:              3
       y:              0
     -
       extension:      loki
@@ -156,18 +165,18 @@ dashboards:
                           <div class='json-w-big-text'><%= _.round(contributedToCircSupplyPercent, 2) %>%</div>
                         </div>
                       </div>"
-      columns:        1
+      columns:        2
       rows:           1
-      x:              1
-      y:              0
+      x:              0
+      y:              1
     -
       extension:      loki
       widget:         StakingGraph
       url:            http://88.208.54.18:9000/loki-sn-calc
       title:          Current Staking amount required
-      columns:        2
+      columns:        4
       rows:           1
-      x:              0
+      x:              2
       y:              1
 - columns: 10
   rows:    1
