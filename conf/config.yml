@@ -162,6 +162,15 @@ dashboards:
       y:              0
     -
       extension:      loki
+      widget:         SNStateChanges
+      url:            http://88.208.54.18:9000/loki-stats
+      title:          SN State Changes (30 days)
+      columns:        2
+      rows:           1
+      x:              4
+      y:              0
+    -
+      extension:      loki
       widget:         StakingGraph
       url:            http://88.208.54.18:9000/loki-sn-calc
       title:          Current Staking amount required
