@@ -15,3 +15,4 @@ Mozaik.configureFromFile(path.join(__dirname, configFile))
     .catch(err => {
         console.error(err)
     })
+ 

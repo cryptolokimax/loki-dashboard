@@ -148,35 +148,35 @@ dashboards:
       y:              0
     -
       extension:      loki
+      widget:         CustomJson
+      url:            http://88.208.54.18:9000/loki-sn-calc
+      title:          SN Locked,% of circ. supply
+      template:       "<div class='json-w-wrapper'>
+                        <div class='json-w-center'>
+                          <div class='json-w-big-text'><%= _.round(contributedToCircSupplyPercent, 1) %>%</div>
+                        </div>
+                      </div>"
+      columns:        1
+      rows:           1
+      x:              3
+      y:              0
+    -
+      extension:      loki
+      widget:         StakingGraph
+      url:            http://88.208.54.18:9000/loki-sn-calc
+      title:          Current Staking amount required
+      columns:        3
+      rows:           1
+      x:              0
+      y:              1
+    -
+      extension:      loki
       widget:         SnVersionGraph
       url:            http://88.208.54.18:9000/loki-sn-calc
       title:          SN versions 
       columns:        3
       rows:           1
       x:              3
-      y:              0
-    -
-      extension:      loki
-      widget:         CustomJson
-      url:            http://88.208.54.18:9000/loki-sn-calc
-      title:          SN Locked,% of circ. supply
-      template:       "<div class='json-w-wrapper'>
-                        <div class='json-w-center'>
-                          <div class='json-w-big-text'><%= _.round(contributedToCircSupplyPercent, 2) %>%</div>
-                        </div>
-                      </div>"
-      columns:        2
-      rows:           1
-      x:              0
-      y:              1
-    -
-      extension:      loki
-      widget:         StakingGraph
-      url:            http://88.208.54.18:9000/loki-sn-calc
-      title:          Current Staking amount required
-      columns:        4
-      rows:           1
-      x:              2
       y:              1
 - columns: 10
   rows:    1
