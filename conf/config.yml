@@ -163,7 +163,7 @@ dashboards:
     -
       extension:      loki
       widget:         SNStateChanges
-      url:            http://88.208.54.18:9000/loki-stats
+      url:            http://88.208.54.156:3000/
       title:          SN State Changes (30 days)
       columns:        2
       rows:           1
