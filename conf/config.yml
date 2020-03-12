@@ -17,12 +17,12 @@ dashboards:
       title:          Current Price
       template:       "<div class='json-w-wrapper'>
                         <div class='json-w-center'>
-                          <div class='json-w-big-text'>$<%= _.round(data.quotes.USD.price, 3) %></div>
-                          <div class='json-w-right-text' style='color: <%= data.quotes.USD.percent_change_1h < 0 ? 'red' : 'green' %>'>
-                            <%= _.round(data.quotes.USD.percent_change_1h, 2) %>%&nbsp;<%= data.quotes.USD.percent_change_1h < 0 ? '↓' : '↑' %>
+                          <div class='json-w-big-text'>$<%= _.round(data.LOKI.quote.USD.price, 3) %></div>
+                          <div class='json-w-right-text' style='color: <%= data.LOKI.quote.USD.percent_change_1h < 0 ? 'red' : 'green' %>'>
+                            <%= _.round(data.LOKI.quote.USD.percent_change_1h, 2) %>%&nbsp;<%= data.LOKI.quote.USD.percent_change_1h < 0 ? '↓' : '↑' %>
                           </div>
                         </div>
-                        <div class='json-w-bottom-text'><%= _.round(data.quotes.BTC.price * 100000000, 2) %> Satoshi</div>
+                        <div class='json-w-bottom-text'><%= _.round(data.LOKI.quote.BTC.price * 100000000, 2) %> Satoshi</div>
                       </div>"
       columns:        1
       rows:           2
