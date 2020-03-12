@@ -13,7 +13,7 @@ dashboards:
     -
       extension:      loki
       widget:         CustomJson
-      url:            https://api.coinmarketcap.com/v2/ticker/2748/?convert=BTC
+      url:            http://88.208.54.18:9000/loki-price
       title:          Current Price
       template:       "<div class='json-w-wrapper'>
                         <div class='json-w-center'>
