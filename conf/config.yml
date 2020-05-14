@@ -133,6 +133,70 @@ dashboards:
       rows:           1
       x:              1
       y:              1
+- columns: 3
+  rows:    2
+  title:   Emission, Fees and Burn
+  widgets:
+  - 
+    extension:      loki
+    widget:         EmissionGraph
+    url:            http://88.208.54.18:9000/loki-stats
+    param:          emissionCumulative
+    title:          Circulating Supply
+    columns:        1
+    rows:           1
+    x:              0
+    y:              0
+  - 
+    extension:      loki
+    widget:         EmissionGraph
+    url:            http://88.208.54.18:9000/loki-stats
+    param:          feeCumulative
+    title:          Fee Cumulative
+    columns:        1
+    rows:           1
+    x:              1
+    y:              0
+  - 
+    extension:      loki
+    widget:         EmissionGraph
+    url:            http://88.208.54.18:9000/loki-stats
+    param:          burnCumulative
+    title:          Burn Cumulative
+    columns:        1
+    rows:           1
+    x:              2
+    y:              0
+  - 
+    extension:      loki
+    widget:         EmissionGraph
+    url:            http://88.208.54.18:9000/loki-stats
+    param:          emission
+    title:          Emission per day (30d)
+    columns:        1
+    rows:           1
+    x:              0
+    y:              1
+  - 
+    extension:      loki
+    widget:         EmissionGraph
+    url:            http://88.208.54.18:9000/loki-stats
+    param:          fee
+    title:          Fee per day (30d)
+    columns:        1
+    rows:           1
+    x:              1
+    y:              1
+  - 
+    extension:      loki
+    widget:         EmissionGraph
+    url:            http://88.208.54.18:9000/loki-stats
+    param:          burn
+    title:          Burn per day (30d)
+    columns:        1
+    rows:           1
+    x:              2
+    y:              1
 - columns: 6
   rows:    2
   title:   LOKI Service Nodes
