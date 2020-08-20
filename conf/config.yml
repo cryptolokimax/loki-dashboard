@@ -251,7 +251,7 @@ dashboards:
       rows:           1
       x:              3
       y:              1
-- columns: 10
+- columns: 13
   rows:    1
   title:   Nodes Distribution
   widgets:
@@ -266,10 +266,19 @@ dashboards:
       y:              0
     -
       extension:      loki
+      widget:         NodesDistributionAsn
+      url:            http://88.208.54.18:9000/loki-node-distribution
+      title:          Network Owners
+      columns:        4
+      rows:           1
+      x:              3
+      y:              0
+    -
+      extension:      loki
       widget:         NodesDistribution
       url:            http://88.208.54.18:9000/loki-node-distribution
       title:          Map
-      columns:        7
+      columns:        6
       rows:           1
-      x:              3
+      x:              7
       y:              0
