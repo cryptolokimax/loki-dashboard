@@ -13,6 +13,10 @@ app.use(
       "localhost:" + port,
       "lokidashboard.com:" + port,
       /.*\.lokidashboard\.com$/,
+      "oxendashboard.com:" + port,
+      /.*\.oxendashboard\.com$/,
+      "oxendashboard.loki:" + port,
+      /.*\.oxendashboard\.loki$/,
     ],
   })
 );

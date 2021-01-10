@@ -8,7 +8,7 @@ apisPollInterval: 70000
 dashboards:
 - columns: 5
   rows:    4
-  title:   LOKI dashboard
+  title:   OXEN dashboard
   widgets:
     -
       extension:      loki
@@ -95,7 +95,7 @@ dashboards:
       y:              2
 - columns: 2
   rows:    2
-  title:   LOKI Hashrate & Block Time
+  title:   Oxen Hashrate & Block Time
   widgets:
     -
       extension:      loki
@@ -181,7 +181,7 @@ dashboards:
     y:              1
 - columns: 6
   rows:    2
-  title:   LOKI Service Nodes
+  title:   OXEN Service Nodes
   widgets:
     -
       extension:      loki

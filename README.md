@@ -1,4 +1,4 @@
-# LOKI dashboard (based on Mozaïk)
+# OXEN dashboard (based on Mozaïk)
 
 ### Install packages
 
