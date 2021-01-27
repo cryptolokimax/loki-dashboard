@@ -10,7 +10,6 @@ export default {
     color: colors.text,
     background: colors.background,
     extend: `
-        @import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600,800|Montserrat:400,700');
         
         & a {
             color: #f6ecd0;
@@ -19,14 +18,18 @@ export default {
   },
   dashboard: {
     header: {
-      background: "#1a1a1a",
-      color: colors.text,
-      boxShadow: "0 1px 1px rgba(0, 0, 0, 0.35)",
-      title: {},
+      background: "#12C7BA",
+      color: "#000000",
+      // boxShadow: "0 1px 1px rgba(0, 0, 0, 0.35)",
+      title: {
+        fontFamily: "Prompt",
+        fontWeight: "600",
+        fontSize: "2.8vmin",
+      },
     },
   },
   widget: {
-    background: "#1a1a1a",
+    background: "#ffffff",
     extend: `
         border-radius: 2px;
         box-shadow: 0 1px 1px rgba(0, 0, 0, .35);
@@ -36,16 +39,19 @@ export default {
     },
     header: {
       height: "5vmin",
-      background: "#000000",
-      color: "#78be20",
-      extend: `
-            box-shadow: 0 1px 0 #000000 inset;
-            border-bottom: 1px solid #000000;
-            border-radius: 2px 2px 0 0;
-            `,
+      background: "#DBF7F5",
+      color: "#000000",
+      fontFamily: "Prompt",
+      fontWeight: "600",
+      fontSize: "2.8vmin",
+      // extend: `
+      //       box-shadow: 0 1px 0 #000000 inset;
+      //       border-bottom: 1px solid #000000;
+      //       border-radius: 2px 2px 0 0;
+      //       `,
       subject: {},
       count: {
-        color: "#7e9ebc",
+        color: "#C3F53A",
         extend: `
                 background-color: #1e2836;
                 box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
@@ -79,12 +85,12 @@ export default {
         border-radius: 2px;
         `,
     main: {
-      background: "#212e41",
-      color: "#78be20",
+      background: "#654192",
+      color: "#C3F53A",
     },
     addon: {
-      background: "#1e2836",
-      color: "#78be20",
+      background: "#654192",
+      color: "#C3F53A",
     },
   },
   list: {
@@ -96,10 +102,10 @@ export default {
             }
             `,
       hover: {
-        background: "#2f3d4b",
+        background: "#654192",
       },
       meta: {
-        color: "#879db7",
+        color: "#DBF7F5",
       },
     },
   },

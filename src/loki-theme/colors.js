@@ -1,10 +1,10 @@
 export default {
-    text: '#ffffff',
-    textHighlight: '#78be20',
-    background: '#1a1a1a',
-    icon: '#78be20',
-    unknown: '#495b71',
-    success: '#4ec2b4',
-    warning: '#d1be65',
-    failure: '#de5029',
-}
+  text: "#000000",
+  textHighlight: "#1F1C47",
+  background: "#fff",
+  icon: "#000",
+  unknown: "#d3dfe8",
+  success: "#12C7BA",
+  warning: "#d1be65",
+  failure: "#e37856",
+};
