@@ -17,6 +17,7 @@ app.use(
       /.*\.oxendashboard\.com$/,
       "oxendashboard.loki:" + port,
       /.*\.oxendashboard\.loki$/,
+      /.*\.ngrok\.io$/,
     ],
   })
 );
