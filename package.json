@@ -30,7 +30,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "react-scripts": "1.0.10"
+    "react-scripts": "5.0.1"
   },
   "proxy": {
     "/socket": {
